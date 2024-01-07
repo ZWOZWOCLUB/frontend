@@ -1,6 +1,6 @@
 const path = require('path');
 
-// Config
+// 환경 설정 가져오기
 // -------------------------------------------------------------------------------
 
 const env = require('gulp-environment');
@@ -15,11 +15,12 @@ const conf = (() => {
   return require('deepmerge').all([{}, _conf.base || {}, _conf[process.env.NODE_ENV] || {}]);
 })();
 
+// 경로를 슬래시로 통일화하고 distPath를 절대 경로로 변경
 conf.distPath = path.resolve(__dirname, conf.distPath).replace(/\\/g, '/');
 
 // Modules
 // -------------------------------------------------------------------------------
-
+// Gulp 모듈 및 유틸리티 가져오기
 const { parallel, series, watch } = require('gulp');
 const del = require('del');
 const colors = require('ansi-colors');
@@ -28,6 +29,7 @@ colors.enabled = require('color-support').hasBasic;
 
 // Utilities
 // -------------------------------------------------------------------------------
+// 유틸리티 함수
 
 function srcGlob(...src) {
   return src.concat(conf.exclude.map(d => `!${d}/**/*`));
@@ -35,12 +37,14 @@ function srcGlob(...src) {
 
 // Tasks
 // -------------------------------------------------------------------------------
+// 빌드 및 프로덕션 작업 가져오기
 
 const buildTasks = require('./tasks/build')(conf, srcGlob);
 const prodTasks = require('./tasks/prod')(conf);
 
 // Clean build directory
 // -------------------------------------------------------------------------------
+// 빌드 디렉토리 정리
 
 const cleanTask = function () {
   return del([conf.distPath, buildPath], {
@@ -59,6 +63,8 @@ const watchTask = function () {
 
 // Serve
 // -------------------------------------------------------------------------------
+// 서버 실행
+
 const serveTasks = function () {
   browserSync.init({
     // ? You can change server path variable from build-config.js file
@@ -79,6 +85,7 @@ const serveTask = parallel([serveTasks, watchTask]);
 
 // Build (Dev & Prod)
 // -------------------------------------------------------------------------------
+// 개발 및 프로덕션 빌드
 
 const buildTask = conf.cleanDist
   ? series(cleanTask, env.current.name === 'production' ? [buildTasks.all, prodTasks.all] : buildTasks.all)
@@ -86,6 +93,8 @@ const buildTask = conf.cleanDist
 
 // Exports
 // -------------------------------------------------------------------------------
+// 모듈 내보내기
+
 module.exports = {
   default: buildTask,
   build: buildTask,
