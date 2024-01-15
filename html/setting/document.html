@@ -17,43 +17,44 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../assets/"
+  data-assets-path="../../assets/"
   data-template="vertical-menu-template-free"
 >
   <head>
-    <meta charset="utf-8" 
-    />
+    <meta charset="utf-8"/>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>메인페이지</title>
+    <title>직원 등록</title>
 
     <meta name="description" content="" />
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
 
-
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+            <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
+    <link rel="stylesheet" href="../../assets/css/pay.css" />
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../../assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="../../assets/js/config.js"></script>
   </head>
 
   <body>
@@ -63,8 +64,8 @@
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-            <a href="../index.html" class="app-brand-link">
-              <img src="../assets/img/icons/unicons/logo.png" style="padding-top: 30px; padding-bottom: 30px;">
+            <a href="../../index.html" class="app-brand-link">
+              <img src="../../assets/img/icons/unicons/logo.png" alt="" style="padding-top: 30px; padding-bottom: 30px;">
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -75,19 +76,27 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
-              <a href="../index.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home"></i>
+            <li class="menu-item">
+              <a href="../../index.html" class="menu-link">
+                <img src="../../assets/img/icons/unicons/home.png" alt="" style="width: 40px;">
                 <div style="padding-left: 10px;">홈</div>
               </a>
             </li>
 
             <!-- Layouts -->
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-calendar"></i>
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <img src="../../assets/img/icons/unicons/schedule.png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">스케줄</div>
               </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div>Without menu</div>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
@@ -97,39 +106,53 @@
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <img src="../assets/img/icons/unicons/organization .png" alt="" style="width: 40px; ">
+                <img src="../../assets/img/icons/unicons/organization .png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">부서</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <img src="../assets/img/icons/unicons/notice.png" alt="" style="width: 40px; ">
+                <img src="../../assets/img/icons/unicons/notice.png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">공지</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <img src="../assets/img/icons/unicons/document.png" alt="" style="width: 40px; ">
+                <img src="../../assets/img/icons/unicons/document.png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">파일함</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="../html/pay/pay.html" class="menu-link">
-                <img src="../assets/img/icons/unicons/pay.png" alt="" style="width: 40px; ">
+                <img src="../../assets/img/icons/unicons/pay.png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">급여관리</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <img src="../assets/img/icons/unicons/statistics.png" alt="" style="width: 40px; ">
+                <img src="../../assets/img/icons/unicons/statistics.png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">통계</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a href="../html/setting/setting.html" class="menu-link">
-                <img src="../assets/img/icons/unicons/setting.png" alt="" style="width: 40px; ">
+            <li class="menu-item active open">
+              <a href="../setting/setting.html" class="menu-link menu-toggle">
+                <img src="../../assets/img/icons/unicons/setting.png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">설정</div>
               </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div>전체직원조회</div>
+                  </a>
+                </li>
+              </ul>
+              <ul class="menu-sub">
+                <li class="menu-item active">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div>직원등록</div>
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </aside>
@@ -180,7 +203,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="../../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -189,7 +212,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="../../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -235,12 +258,83 @@
 
           <!-- Content wrapper -->
           <div class="content-wrapper">
-            <!-- 여기에 작성!!!!!! -->
-
-            
-              
-
-            <div class="content-backdrop fade"></div>
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!여기에 작성!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">설정 ></span> 직원 등록</h4>
+                <!-- Basic Layout -->
+                <div class="col-xxl">
+                  <div class="card mb-4">
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <ul class="nav nav-pills flex-column flex-md-row mb-3">
+                      <li class="nav-item">
+                        <a class="nav-link" href="../setting/memberAdd.html"> 프로필 정보</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="../setting/personnelInfo.html"
+                          > 인사 정보</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="pages-account-settings-connections.html"
+                          > 서류함</a
+                        >
+                      </li>
+                    </ul>
+                    <div class="card mb-4">
+                      <div class="card-body">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr style="text-align: left;">
+                              <th>증빙서류</th>
+                              <th>제출일</th>
+                              <th>수정일</th>
+                              <th>첨부파일</th>
+                            </th>
+                          </thead>
+                          <tbody class="table-border-bottom-0">
+                            <tr style="text-align: left;">
+                              <td>보안서약서</td>
+                              <td>0000-00-0000</td>
+                              <td>0000-00-0000</td>
+                              <td>~~~~~~~~~.pdf</td>
+                              <td><i class="bx bx-down-arrow-alt" style="padding-right: 10px;"></i>
+                                <i class="bx bx-up-arrow-alt" style="padding-right: 10px;"></i>
+                                <i class="bx bx-x"></i></td>
+                            </tr>
+                            <tr style="text-align: left;">
+                              <td>졸업증명서</td>
+                              <td>0000-00-0000</td>
+                              <td>0000-00-0000</td>
+                              <td>~~~~~~~~~.pdf</td>
+                              <td><i class="bx bx-down-arrow-alt" style="padding-right: 10px;"></i>
+                                <i class="bx bx-up-arrow-alt" style="padding-right: 10px;"></i>
+                                <i class="bx bx-x"></i></td>
+                            </tr>
+                            <tr style="text-align: left;">
+                              <td>통장사본</td>
+                              <td>0000-00-0000</td>
+                              <td>0000-00-0000</td>
+                              <td>~~~~~~~~~.pdf</td>
+                              <td><i class="bx bx-down-arrow-alt" style="padding-right: 10px;"></i>
+                                  <i class="bx bx-up-arrow-alt" style="padding-right: 10px;"></i>
+                                  <i class="bx bx-x"></i></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <div class="addList">
+                          <br>
+                          +추가
+                          </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
           </div>
           <!-- Content wrapper -->
         </div>
@@ -256,22 +350,22 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="../../assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="../assets/js/dashboards-analytics.js"></script>
+    <script src="../../assets/js/dashboards-analytics.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

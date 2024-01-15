@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
+    <link rel="stylesheet" href="../../assets/css/pay.css" />
 
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
@@ -62,9 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       headerToolbar: {
-        left: 'prev,next today',
+        left: 'prev',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        right: 'next today'
       },
       initialDate: '2023-01-12', //페이지 켰을때 선택되는 날짜
       navLinks: true, // 날짜 및 주 이름을 클릭하여 뷰를 전환할 수 있는 기능을 활성화
@@ -344,7 +345,44 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="col-xxl">
                 <div class="card mb-4">
-                  <div id='calendar'></div>
+                  <div class="scheduleWrapper">
+                    <div class="department">
+                      <div class="input-group5">
+                        <div class="input-group-text5">전체 조직도</div>
+                        <input
+                          type="text"
+                          class="form-control4"
+                          placeholder="검색어를 입력하세요"
+                          aria-describedby="basic-addon11"
+                        />
+                        <span class="input-group-text4" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                      </div>
+                      <table class="tblDepartment">
+                        <tr>
+                          <td>
+                            <i class="bx bx-plus-circle" style="padding-right: 10px;">외과1팀</i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <i class="bx bx-minus-circle" style="padding-right: 10px;">외과1팀</i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            &nbsp;<i class="bx bx-subdirectory-right" style="padding-right: 10px;">의과장</i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            &nbsp;<i class="bx bx-subdirectory-right" style="padding-right: 10px;">의과장</i>
+                          </td>
+                        </tr>
+                      </table>
+
+                    </div>
+                    <div id='calendar' style="flex:2;"></div>
+                  </div>
                 </div>
               </div>
             </div>
