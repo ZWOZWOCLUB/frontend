@@ -62,12 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
+      locale: 'ko',
       headerToolbar: {
         left: 'prev',
         center: 'title',
         right: 'next today'
       },
-      initialDate: '2023-01-12', //페이지 켰을때 선택되는 날짜
+      initialView : 'dayGridMonth',
       navLinks: true, // 날짜 및 주 이름을 클릭하여 뷰를 전환할 수 있는 기능을 활성화
       selectable: true, //사용자가 날짜 선택
       selectMirror: true,
@@ -149,6 +150,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     calendar.render();
+        $(".fc-daygrid-day-number").each(function(){
+
+        var day = $(this).text();
+
+        day = day.replace("일","");
+
+        $(this).text(day);
+
+        });
   });
       </script>
       
