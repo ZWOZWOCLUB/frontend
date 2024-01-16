@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>공지사항작성</title>
+    <title>공지사항테스트</title>
 
     <meta name="description" content="" />
 
@@ -245,254 +245,105 @@
 
              
                 <!-- Basic Layout -->
+               
+
                 <div class="col-xxl">
-                  <div class="card mb-4">
-                    <div class="pay-top-wrapper">
-                      <div style="width: 10%; color: #8184ff;"><b>공지사항</b></div>
-                      <div style="width: 100%;"></div>
-                      <select id="defaultSelect" class="form-select" style="width: 10%;">
-                        <option>제목</option>
-                        <option value="2024">제목</option>
-                        <option value="2023">작성자</option>
-                        <option value="2022">내용</option>
-                      </select>
+                  <div class="card mb-4" >
                       
-                      <form class="d-flex" onsubmit="return false" style="width: 30%;">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                       
-                      </form>
-                      
-                      <div style="width: 5%;"></div>
-                      <div class="btn btn-primary" style="width: 15%;"><b>공지작성</b></div>
-                      <div style="width: 5%;"></div>
-                    </div>
-                      
-                    <table class="table table-hover">
-                      <tr style="background-color: #DCDCFF;">
-                        <th style="width: 5%;">
-                          <input
-                            class="form-check-input mt-0"
-                            type="checkbox"
-                            value=""
-                            aria-label="Checkbox for following text input"
-                          />
-                        </th>
-                        <th style="width: 5%;">NO</th>
-                        <th style="width: 25%;">제목</th>
-                        <th style="width: 15%;">작성자</th>
-                        <th style="width: 15%;">작성일</th>
-                        <th style="width: 10%;">조회수</th>
+                      <div class="row">
+                          <div class="col-xl" >
+                              
+                              <div class="pay-top-wrapper" style="width: 60%; margin: 0 auto; ">
+                                
+                                <div style="width: 15%; color: #8184ff;"><b>공지사항 작성</b></div>
+                                
+                                <!-- <div style="width: 100%;"></div> -->
+                                <!-- <div class="btn btn-primary" style="width: 15%;"><b>공지작성</b></div> -->
+                                
+                              </div>
+                            
+                            <div class="card-body" style="width: 60%; margin: 0 auto; ">
+                              <form>
+                                
+                                <div class="mb-3">
+                                    
+                                  <label class="form-label" for="basic-default-fullname">제목<span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" id="basic-default-fullname" placeholder="제목을 작성해 주세요." />
+                                </div>
+                                <div class="mb-3">
+                                  <label class="form-label" for="basic-default-message">내용<span style="color: red;">*</span></label>
+                                  <textarea
+                                    
+                                    id="basic-default-message"
+                                    class="form-control"
+                                    placeholder="내용을 작성해주세요."
+                                    style="height: 300px;"
+                                  ></textarea>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="formFileMultiple" class="form-label">파일 첨부</label>
 
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>31</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
+                                     <div class="input-group">
+                                        <input type="file" class="form-control" id="inputGroupFile02" />
+                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                      </div>
+                                      
+                                  </div>
+                                  <label for="formFileMultiple" class="form-label">알림 설정</label>
+                                  <div class="col-md">
+                                    
+                                    <div class="form-check form-check-inline mt-3">
+                                      <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="inlineRadioOptions"
+                                        id="inlineRadio1"
+                                        value="option1"
+                                      />
+                                      <label class="form-check-label" for="inlineRadio1">전송</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                      <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="inlineRadioOptions"
+                                        id="inlineRadio2"
+                                        value="option2"
+                                      />
+                                      <label class="form-check-label" for="inlineRadio2">전송하지 않음</label>
+                                    </div>
 
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>30</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
+                                  
+                                
+                              </form>
+                              
+                            </div>
+                            <br>
+                            <hr class="m-0">
+                          </div>
+                          
+                        </div>
+                        <div class="pay-top-wrapper">
+                            
+                          <!-- 삭제버튼입니다 -->
+                          <div style="width: 20%;"></div>
+                          <div style="width: 37%;"></div>
 
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>29</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>28</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>27</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>26</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>25</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>24</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>23</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>22</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value=""
-                          aria-label="Checkbox for following text input"
-                        />
-                        </td>
-                        <td>21</td>
-                        <td>공지제목31</td>
-                        <td>작성자31</td>
-                        <td>2024-01-12</td>
-                        <td>조회수</td>
-                      </tr>
-                    </table>
-                    <div class="pay-top-wrapper">
-                      <!-- 삭제버튼입니다 -->
-                      <div class="btn btn-danger" style="width: 10%;"><b>삭제</b></div>
-                      <div style="width: 35%;"></div>
-                      <!-- 페이지이동버튼입니다 -->
-                      <ul class="pagination pagination-sm">
-                        <li class="page-item prev">
-                          <a class="page-link" href="javascript:void(0);"
-                            ><i class="tf-icon bx bx-chevrons-left"><</i
-                          ></a>
-                        </li>
-                        <li class="page-item active">
-                          <a class="page-link" href="javascript:void(0);">1</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link " href="javascript:void(0);">2</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="javascript:void(0);">3</a>
-                        </li>
-                        <li class="page-item next">
-                          <a class="page-link" href="javascript:void(0);"
-                            ><i class="tf-icon bx bx-chevrons-right">></i
-                          ></a>
-                        </li>
-                      </ul>
-                      <!-- 페이징버튼 <> 요고 해결하기  -->
-                      
+                          <div class="btn btn-danger" style="width: 10%; box-shadow: 0px 0px 10px #bbbdfc; background-color: #bbbdfc; border-color: #bbbdfc" ><b>닫기</b></div>
+                          <div style="width: 2%;"></div>
+                          
+                          <button type="submit" class="btn btn-primary" style="width: 10%;">작성 완료</button>
+                          <div style="width: 20%;"></div>
+    
                       </div>
-                  </div>
+                    <div>
+
                 </div>
                
             </div>
+            
+       
           </div>
           <!-- Content wrapper -->
         </div>
