@@ -305,3 +305,7 @@
     margin: 1em;
     padding: 1em;
 }
+
+.fc .fc-button-primary:active{
+    background-color: #696cff;
+}

@@ -7719,6 +7719,8 @@ var FullCalendar = (function (exports) {
             week: 'week',
             day: 'day',
             list: 'list',
+            
+
         },
         weekText: 'W',
         weekTextLong: 'Week',
@@ -12915,11 +12917,11 @@ var FullCalendar = (function (exports) {
             },
             dayGridDay: {
                 type: 'dayGrid',
-                duration: { days: 1 },
+                duration: {days: 31},
             },
             dayGridWeek: {
                 type: 'dayGrid',
-                duration: { weeks: 1 },
+                duration: { weeks: 4 },
             },
             dayGridMonth: {
                 type: 'dayGrid',
