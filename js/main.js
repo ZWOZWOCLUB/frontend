@@ -7,7 +7,8 @@
 let menu, animate;
 
 (function () {
-  // 메뉴 초기화
+  // Initialize menu
+  //-----------------
 
   let layoutMenuEl = document.querySelectorAll('#layout-menu');
   layoutMenuEl.forEach(function (element) {
@@ -20,16 +21,16 @@ let menu, animate;
     window.Helpers.mainMenu = menu;
   });
 
-  // 메뉴 토글 초기화
+  // Initialize menu toggler and bind mouseover
   let menuToggler = document.querySelectorAll('.layout-menu-toggle');
   menuToggler.forEach(item => {
-    item.addEventListener('click', event => {
+    item.addEventListener('mouseover', event => {
       event.preventDefault();
-      window.Helpers.toggleCollapsed();
+      window.Helpers.setCollapsed(false, true); // Expand the menu on mouseover
     });
   });
 
-  // 메뉴 토글 딜레이 설정
+  // Display menu toggle (layout-menu-toggle) on hover with delay
   let delay = function (elem, callback) {
     let timeout = null;
     elem.onmouseenter = function () {
@@ -43,20 +44,21 @@ let menu, animate;
 
     elem.onmouseleave = function () {
       // Clear any timers set to timeout
-      document.querySelector('.layout-menu-toggle').classList.remove('d-block');
+      menuToggler.forEach(toggler => toggler.classList.remove('d-block'));
       clearTimeout(timeout);
     };
   };
+
   if (document.getElementById('layout-menu')) {
     delay(document.getElementById('layout-menu'), function () {
       // not for small screen
       if (!Helpers.isSmallScreen()) {
-        document.querySelector('.layout-menu-toggle').classList.add('d-block');
+        menuToggler.forEach(toggler => toggler.classList.add('d-block'));
       }
     });
   }
 
-  // 메뉴 스크롤 그림자 표시
+  // Display in main menu when menu scrolls
   let menuInnerContainer = document.getElementsByClassName('menu-inner'),
     menuInnerShadow = document.getElementsByClassName('menu-inner-shadow')[0];
   if (menuInnerContainer.length > 0 && menuInnerShadow) {
@@ -68,6 +70,7 @@ let menu, animate;
       }
     });
   }
+
 
   // Init helpers & misc
   // --------------------

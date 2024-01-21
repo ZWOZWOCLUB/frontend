@@ -21,12 +21,12 @@ let menu, animate;
     window.Helpers.mainMenu = menu;
   });
 
-  // Initialize menu togglers and bind click on each
+  // Initialize menu toggler and bind mouseover
   let menuToggler = document.querySelectorAll('.layout-menu-toggle');
   menuToggler.forEach(item => {
-    item.addEventListener('click', event => {
+    item.addEventListener('mouseover', event => {
       event.preventDefault();
-      window.Helpers.toggleCollapsed();
+      window.Helpers.setCollapsed(false, true); // Expand the menu on mouseover
     });
   });
 
@@ -44,15 +44,16 @@ let menu, animate;
 
     elem.onmouseleave = function () {
       // Clear any timers set to timeout
-      document.querySelector('.layout-menu-toggle').classList.remove('d-block');
+      menuToggler.forEach(toggler => toggler.classList.remove('d-block'));
       clearTimeout(timeout);
     };
   };
+
   if (document.getElementById('layout-menu')) {
     delay(document.getElementById('layout-menu'), function () {
       // not for small screen
       if (!Helpers.isSmallScreen()) {
-        document.querySelector('.layout-menu-toggle').classList.add('d-block');
+        menuToggler.forEach(toggler => toggler.classList.add('d-block'));
       }
     });
   }
