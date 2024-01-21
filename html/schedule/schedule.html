@@ -48,6 +48,7 @@
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="../../assets/css/pay.css" />
+    <link rel="stylesheet" href="../../assets/css/tui-tree.css" />
 
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
@@ -55,123 +56,8 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../assets/js/config.js"></script>
-    <script src='../../js/index.global.js'></script>
-    <script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      locale: 'ko',
-      headerToolbar: {
-        left: 'prev search',
-        center: 'title',
-        right: 'next patternInscription scheduleAdd'
-      },
-      customButtons: {
-        patternInscription: {
-          text: '근무패턴등록',
-          click: function() {
-            window.open('url','new', 'width=1500, height=1000')
-          }
-        },
-        scheduleAdd: {
-          text: '근무일정추가',
-          click: function() {
-            window.open('../schedule/new.html','new', 'width=1500, height=1000')
-          }
-        },
-        search: {
-          text:'검색',
-          
-        }
-      },
-      initialView : 'dayGridMonth',
-      navLinks: true, // 날짜 및 주 이름을 클릭하여 뷰를 전환할 수 있는 기능을 활성화
-      selectable: true, //사용자가 날짜 선택
-      selectMirror: true,
-      select: function(arg) {  //날짜 선택하면 실행될 이벤트
-        var title = prompt('Event Title:');
-        if (title) {
-          calendar.addEvent({
-            title: title,
-            start: arg.start,
-            end: arg.end,
-            allDay: arg.allDay
-          })
-        }
-        calendar.unselect()
-      },
-      eventClick: function(arg) {  //이벤트 지울때 알림창
-        if (confirm('Are you sure you want to delete this event?')) {
-          arg.event.remove()
-        }
-      },
-      editable: true, //이벤트 편집할 수 있는 기능 활성화
-      dayMaxEvents: true, // 단일 날짜에 표시되는 최대 이벤트 수를 초과할 경우 "더 보기" 링크를 표시하도록 설정합니다.
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2024-01-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2024-01-07',
-          end: '2024-01-10'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2024-01-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2024-01-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2024-01-11',
-          end: '2024-01-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2024-01-12T10:30:00',
-          end: '2024-01-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2024-01-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2024-01-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2024-01-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2024-01-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2024-01-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2024-01-28'
-        }
-      ]
-    });
-
-    calendar.render();
-       
-  });
-      </script>
-      
+    
+    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
   </head>
 
   <body>
@@ -369,6 +255,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="department">
                       <div class="input-group5">
                         <div class="input-group-text5">전체 조직도</div>
+                        
+                      <div id="tree" class="tui-tree-wrap"></div>
+                    </div>
+                    </div>
+                    <div class="Wrapper" style="flex:3;">
+                      <div class="btnWrapper">
                         <input
                           type="text"
                           class="form-control4"
@@ -376,38 +268,24 @@ document.addEventListener('DOMContentLoaded', function() {
                           aria-describedby="basic-addon11"
                         />
                         <span class="input-group-text4" id="basic-addon-search31"><i class="bx bx-search"></i></span>
-                      </div>
-                      <table class="tblDepartment">
-                        <tr>
-                          <td>
-                            <i class="bx bx-plus-circle" style="padding-right: 10px;">외과1팀</i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <i class="bx bx-minus-circle" style="padding-right: 10px;">외과1팀</i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            &nbsp;<i class="bx bx-subdirectory-right" style="padding-right: 10px;">의과장</i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            &nbsp;<i class="bx bx-subdirectory-right" style="padding-right: 10px;">의과장</i>
-                          </td>
-                        </tr>
-                      </table>
-
+                        <button class="prev">
+                          <
+                        </button>
+                      <div class="range"></div>
+                        <button class="next">
+                          >
+                        </button>
+                        <button class="today">Today</button>
+                        <button class="patternInscription" onclick=" window.open('url','new', 'width=1500, height=1000')"><span class="bx bx-calendar-edit" style="padding-bottom: 3px;"></span>근무패턴등록</button>
+                        <button class="scheduleAdd" onclick=" window.open('../schedule/scheduleAdd.html','new', 'width=1500, height=900')"><span class="bx bx-calendar-plus" style="padding-bottom: 3px;"></span>근무일정추가</button>
                     </div>
-                    <div id='calendar' style="flex:2;"></div>
+                    <div id='calendar' ></div>
+                  </div>
+
                   </div>
                 </div>
               </div>
             </div>
-
-            
               
 
           </div>
@@ -440,9 +318,176 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="../../assets/js/dashboards-analytics.js"></script>
-
+    <script src="../../assets/js/tui-tree.js"></script>
+    <script src="../../assets/calendar/scripts/utils.js"></script>
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.ie11.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+      const Calendar = tui.Calendar;
+
+      const container = document.getElementById('calendar');
+      
+      const options = {
+        defaultView: 'month',
+        month: {
+          dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        },
+        gridSelection: {
+        enableDblClick: false,
+        enableClick: false,
+        },
+        
+        timezone: {
+          zones: [
+            {
+              timezoneName: 'Asia/Seoul',
+              displayLabel: 'Seoul',
+            },
+          ],
+        },
+        calendars: [
+          {
+            id: 'cal1',
+            name: '개인',
+            backgroundColor: '#03bd9e',
+          },
+          {
+            id: 'cal2',
+            name: '직장',
+            backgroundColor: '#00a9ff',
+          },
+        ],
+      };
+
+        const calendar = new Calendar(container, options);
+        calendar.setTheme({  //주말 배경색 변경
+          month: {
+            weekend: {
+              backgroundColor: 'aliceblue',
+            },
+          },
+        });
+
+        
+        
+    </script>
+
+    <script type="text/javascript">
+      var todayButton = $('.today');
+      var prevButton = $('.prev');
+      var nextButton = $('.next');
+      var range = document.querySelector('.range');
+
+      function displayMonth() {
+        var currentDate = new Date();
+        var year = currentDate.getFullYear();
+        var month = currentDate.toLocaleString('ko-KR', { month: 'long' });
+
+        range.textContent = year + '년 ' + month;
+      }
+
+
+      function displayRenderRange() {
+        range.textContent = getNavbarRange(calendar.getDateRangeStart(), calendar.getDateRangeEnd(), 'month');
+      }
+
+      todayButton.addEventListener('click', function () {
+        calendar.today();
+        displayMonth();
+        displayRenderRange();
+      });
+      prevButton.addEventListener('click', function () {
+        calendar.prev();
+        displayMonth();
+        displayRenderRange();
+      });
+      nextButton.addEventListener('click', function () {
+        calendar.next();
+        displayMonth();
+        displayRenderRange();
+      });
+
+      displayMonth();
+      displayRenderRange();
+
+      
+    </script>
+    <script class="code-js">
+
+      var util = {
+          addEventListener: function(element, eventName, handler) {
+              if (element.addEventListener) {
+                  element.addEventListener(eventName, handler, false);
+              } else {
+                  element.attachEvent('on' + eventName, handler);
+              }
+          }
+      };
+
+      var data = [
+          {text: '외과1팀', children: [
+              {text: 'sub-A1'},
+              {text: 'sub-A2'},
+              {text: 'sub-A3'},
+              {text: 'sub-A4'},
+              {text: 'sub-A5', state: 'closed', children: [
+                  {text:'sub-A5A', children:[
+                      {text:'sub-A5A1'}
+                  ]},
+                  {text:'sub_A5B'}
+              ]},
+              {text: 'sub-A6'},
+              {text: 'sub-A7'},
+              {text: 'sub-A8'},
+              {text: 'sub-A9', state: 'closed', children: [
+                  {text:'sub-A9A'},
+                  {text:'sub-A9B'}
+              ]},
+              {text: 'sub-A10'},
+              {text: 'sub-A11'},
+              {text: 'sub-A12'}
+          ]},
+          {text: 'rootB', state:'closed', children: [
+              {text:'sub-B1'},
+              {text:'sub-B2'},
+              {text:'sub-B3'}
+          ]}
+      ];
+
+      var tree = new tui.Tree('#tree', {
+          data: data,
+          nodeDefaultState: 'opened'
+      });
+
+      var addChildBtn = document.getElementById('addChildBtn');
+      var removeChildBtn = document.getElementById('removeChildBtn');
+      var sortBtn = document.getElementById('sortBtn');
+      var rootNodeId = tree.getRootNodeId();
+      var firstChildId = tree.getChildIds(rootNodeId)[0];
+
+      util.addEventListener(addChildBtn, 'click', function() {
+          tree.add({text:'hello world'}, firstChildId);
+      });
+
+      util.addEventListener(removeChildBtn, 'click', function() {
+          var lastGrandChildId = tree.getChildIds(firstChildId).slice(-1)[0];
+          tree.remove(lastGrandChildId);
+      });
+
+      util.addEventListener(sortBtn, 'click', function() {
+          tree.sort(function(nodeA, nodeB) {
+              var aValue = nodeA.getData('text'),
+                  bValue = nodeB.getData('text');
+
+              if (!aValue.localeCompare) {
+                  return 0;
+              }
+              return aValue.localeCompare(bValue);
+          });
+      });
+
+      </script>
   </body>
 </html>
