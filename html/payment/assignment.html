@@ -43,7 +43,10 @@
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="../../assets/css/pay.css" />
+    <link rel="stylesheet" href="../../assets/css/payment.css" />
     <link rel="stylesheet" href="../../assets/css/payment-assignment.css" />
+    <link rel="stylesheet" href="../../assets/css/tui-tree.css" />
+
 
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
@@ -259,18 +262,49 @@
                       >
                     </li>
                   </ul>
-                </div>
-          <!-- Content wrapper -->
-        </div>
-        <!-- / Layout page -->
-      </div>
+              </div>
 
-      <!-- Overlay -->
+             
+                <!-- Basic Layout -->
+              <div class="col-xxl">
+                <div class="card mb-4">
+                  <div class="pay-top-wrapper">
+                    <div class="container">
+                      <div class="payment-calendar" id='calendar'></div>
+                      <div class="payment-table">
+                        <h5>결재선정보</h5>
+                        <hr />
+                        <div class="assign-name" >위탁할 결재선
+                          <select name="payment-assignment" id="select-assign" class="select-assign">
+                            <option value="0">--선택--</option>
+                            <options value="1">전권</options>
+                            <options value="2">휴가</options>
+                          </select>                        
+                        </div>
+                        <table class="table table-hover">
+                          <thead>
+                          <tr style="background-color: #DCDCFF;">
+                            <th style="width: 40px; align-items: center;"></th>
+                            <th>이름</th>
+                            <th>직위</th>
+                            <th>부서</th>
+                          </tr>
+                        </thead>
+                          <td><input type="radio" value="0" style="width: 40px; align-items: center;"></input></td>
+                          <td>이동락</td>
+                          <td>과장</td>
+                          <td>외과 1팀</td>
+                         </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-    <!-- / Layout wrapper -->
-
-    
+    <!-- / Layout wrapper --> 
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -290,8 +324,17 @@
 
     <!-- Page JS -->
     <script src="../../assets/js/dashboards-analytics.js"></script>
+    <script src="../../assets/js/tui-tree.js"></script>
+    <script src="../../assets/calendar/scripts/utils.js"></script>
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.ie11.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+   
   </body>
 </html>
