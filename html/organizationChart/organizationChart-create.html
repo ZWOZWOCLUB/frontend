@@ -306,10 +306,39 @@
 
 
 
-                    <form action="서버 URL" method="post">
+                    <form action="URL" method="post">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <div class="org-flex">
+                              
+
+                              <!--상위부서 선택 드롭다운-->
+                            <div class="org-flex">
+
+                              <div class="btn-group">
+                                <button
+                                  type="button"
+                                  class="btn btn-outline-secondary dropdown-toggle"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  상위 부서 선택
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
+                                  <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                  <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider" />
+                                  </li>
+                                  <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                                </ul>
+                              </div>
+
+                                <!-- 생성 버튼 -->
+                                <button type="submit" class="btn btn-primary ml-2">생성하기</button>
+                            </div>
+                              
+
                                     <!-- 부서명 -->
                                     <div class="form-floating org-dep-name">
                                         <input type="text" class="form-control" id="floatingInput" placeholder="" />
@@ -317,9 +346,8 @@
                                     </div>
                                     
                                     
-                                    <!-- 생성 버튼 -->
-                                    <button type="submit" class="btn btn-primary ml-2">생성하기</button>
-                                </div>
+
+
                     
                                 <!-- 중간관리자 -->
                                 <div class="col-md-3 org-middle-manager">
