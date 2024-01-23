@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="../../assets/css/payment.css" />
     <link rel="stylesheet" href="../../assets/css/payment-assignment.css" />
     <link rel="stylesheet" href="../../assets/css/tui-tree.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
 
 
     <!-- Helpers -->
@@ -54,6 +55,8 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../assets/js/config.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../../assets/vendor/libs/jquery/jquery.js"></script>
   </head>
 
   <body>
@@ -270,15 +273,25 @@
                 <div class="card mb-4">
                   <div class="pay-top-wrapper">
                     <div class="container">
+                      <div>
+                        <button class="prev">
+                          <
+                        </button>
+                        <span class="range"></span>
+                        <button class="next">
+                          >
+                        </button>
+                        <button class="today">Today</button>
                       <div class="payment-calendar" id='calendar'></div>
+                    </div>
                       <div class="payment-table">
                         <h5>결재선정보</h5>
                         <hr />
                         <div class="assign-name" >위탁할 결재선
                           <select name="payment-assignment" id="select-assign" class="select-assign">
                             <option value="0">--선택--</option>
-                            <options value="1">전권</options>
-                            <options value="2">휴가</options>
+                            <option value="1">전권</option>
+                            <option value="2">휴가</option>
                           </select>                        
                         </div>
                         <table class="table table-hover">
@@ -305,7 +318,87 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper --> 
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.ie11.min.js"></script>
 
+    <script>
+      const Calendar = tui.Calendar;
+
+      const container = document.getElementById('calendar');
+      const options = {
+        defaultView: 'month',
+        month: {
+          dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        },
+        timezone: {
+          zones: [
+            {
+              timezoneName: 'Asia/Seoul',
+              displayLabel: 'Seoul',
+            },
+            {
+              timezoneName: 'Europe/London',
+              displayLabel: 'London',
+            },
+          ],
+        },
+        
+        
+      };
+      
+
+const calendar = new Calendar(container, options);
+calendar.setTheme({  //주말 배경색 변경
+          month: {
+            weekend: {
+              backgroundColor: 'aliceblue',
+            },
+          },
+        });
+
+        
+    </script>
+<script type="text/javascript">
+ document.addEventListener('DOMContentLoaded', function () {
+  var todayButton = document.querySelector('.today');
+  var prevButton = document.querySelector('.prev');
+  var nextButton = document.querySelector('.next');
+  var range = document.querySelector('.range');
+
+  function displayMonth() {
+    var currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = currentDate.toLocaleString('ko-KR', { month: 'long' });
+
+    range.textContent = year + '년 ' + month;
+  }
+
+  function displayRenderRange() {
+    range.textContent = getNavbarRange(calendar.getDateRangeStart(), calendar.getDateRangeEnd(), 'month');
+  }
+
+  todayButton.addEventListener('click', function () {
+    calendar.today();
+    displayMonth();
+    displayRenderRange();
+  });
+
+  prevButton.addEventListener('click', function () {
+    calendar.prev();
+    displayMonth();
+    displayRenderRange();
+  });
+
+  nextButton.addEventListener('click', function () {
+    calendar.next();
+    displayMonth();
+    displayRenderRange();
+  });
+
+  displayMonth();
+  displayRenderRange();
+});
+  
+</script>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
@@ -328,6 +421,8 @@
     <script src="../../assets/calendar/scripts/utils.js"></script>
     <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.ie11.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
