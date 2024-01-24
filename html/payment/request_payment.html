@@ -17,24 +17,19 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../assets/"
+  data-assets-path="../../assets/"
   data-template="vertical-menu-template-free"
 >
   <head>
-    <meta charset="utf-8" 
-    />
+    <meta charset="utf-8"/>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>메인페이지</title>
+    <title>받은 결재</title>
 
     <meta name="description" content="" />
-
-
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
@@ -48,7 +43,7 @@
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="../../assets/css/pay.css" />
-    <link rel="stylesheet" href="../../assets/css/tui-tree.css" />
+    <link rel="stylesheet" href="../../assets/css/payment.css" />
 
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
@@ -56,8 +51,6 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../assets/js/config.js"></script>
-    
-    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
   </head>
 
   <body>
@@ -67,8 +60,8 @@
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-            <a href="index.html" class="app-brand-link">
-              <img src="../../assets/img/icons/unicons/logo.png" style="padding-top: 30px; padding-bottom: 30px;">
+            <a href="../../index.html" class="app-brand-link">
+              <img src="../../assets/img/icons/unicons/logo.png" alt="" style="padding-top: 30px; padding-bottom: 30px;">
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,8 +72,8 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
-              <a href="index.html" class="menu-link">
+            <li class="menu-item">
+              <a href="../../index.html" class="menu-link">
                 <img src="../../assets/img/icons/unicons/home.png" alt="" style="width: 40px;">
                 <div style="padding-left: 10px;">홈</div>
               </a>
@@ -125,8 +118,8 @@
                 <div style="padding-left: 10px;">파일함</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a href="../html/pay.html" class="menu-link">
+            <li class="menu-item active">
+              <a href="../html/pay/pay.html" class="menu-link">
                 <img src="../../assets/img/icons/unicons/pay.png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">급여관리</div>
               </a>
@@ -138,7 +131,7 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="../html/setting.html" class="menu-link">
+              <a href="../setting/setting.html" class="menu-link">
                 <img src="../../assets/img/icons/unicons/setting.png" alt="" style="width: 40px; ">
                 <div style="padding-left: 10px;">설정</div>
               </a>
@@ -247,48 +240,83 @@
 
           <!-- Content wrapper -->
           <div class="content-wrapper">
-            <!-- 여기에 작성!!!!!! -->
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!여기에 작성!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="col-xxl">
-                <div class="card mb-4">
-                  <div class="scheduleWrapper">
-                    <div class="department">
-                      <div class="input-group5">
-                        <div class="input-group-text5">전체 조직도</div>
-                        
-                      <div id="tree" class="tui-tree-wrap"></div>
-                    </div>
-                    </div>
-                    <div class="Wrapper" style="flex:3;">
-                      <div class="btnWrapper">
-                        <input
-                          type="text"
-                          class="form-control4"
-                          placeholder="검색어를 입력하세요"
-                          aria-describedby="basic-addon11"
-                        />
-                        <span class="input-group-text4" id="basic-addon-search31"><i class="bx bx-search"></i></span>
-                        <button class="prev">
-                          
-                        </button>
-                      <div class="range"></div>
-                        <button class="next">
-                          >
-                        </button>
-                        <button class="today">Today</button>
-                        <button class="patternInscription" onclick=" window.open('url','new', 'width=1500, height=1000')"><span class="bx bx-calendar-edit" style="padding-bottom: 3px;"></span>근무패턴등록</button>
-                        <button class="scheduleAdd" onclick=" window.open('../schedule/scheduleAdd.html','new', 'width=1500, height=900')"><span class="bx bx-calendar-plus" style="padding-bottom: 3px;"></span>근무일정추가</button>
-                    </div>
-                    <div id='calendar' ></div>
-                  </div>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">결재 ></span> 받은 결재</h4>
+              <div class="payment-line">
+                  <ul class="nav nav-pills flex-column flex-md-row mb-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="./request_payment.html"> 받은 결재</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./send_payment.html"
+                        > 보낸 결재</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./assignment.html"
+                        > 전결자 지정</a
+                      >
+                    </li>
+                  </ul>
+              </div>
 
+             
+                <!-- Basic Layout -->
+                <div class="col-xxl">
+                  <div class="card mb-4">
+                    <div class="pay-top-wrapper">
+                      <div></div>
+                        <!-- <select id="defaultSelect" class="form-select" style="width: 10%;">
+                          <option>--선택--</option>
+                          <option value="2024">2024</option>
+                          <option value="2023">2023</option>
+                          <option value="2022">2022</option>
+                        </select> -->
+                        <input class="inputDate" type="date" /> ~ 
+                        <input class="inputDate" type="date" />
+                        <select name="payment-type" class="payment-type" id="payment-type">
+                          <option value="0">결재유형</option>
+                        </select>
+                        <select name="payment-status" class="payment-status" id="payment-status">
+                          <option value="0">결재상태</option>
+                          <option value="1">반려</option>       <!-- DB에 값 어떻게 넣을지에 따라 달라짐-->
+                          <option value="2">승인</option>
+                          <option value="3">대기</option>
+                        </select>
+                        <input type="search" placeholder="결재 제목을 알려주세요 " style="width : 400px">
+                        <img src="../../assets/img/paymentimg/search.png" style="width:20px; margin-left: 5px"/>
+                        <button class="payment-insert-button">결재신청</button>
+                    </div>
+                    <table class="table table-hover">
+                      <thead>
+                      <tr style="background-color: #DCDCFF;">
+                        <th>보낸이</th>
+                        <th>제목</th>
+                        <th>요청일</th>
+                        <th>반려/승인일</th>
+                        <th>결재 유형</th>
+                        <th>상태</th>
+                        <th>참조자</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                      <td>이현강</td>
+                      <td>휴가가겠읍니다</td>
+                      <td>2024-01-22</td>
+                      <td></td>
+                      <td>연차</td>
+                      <td>대기</td>
+                      <td>아이콘</td>
+                      <td>:</td>
+
+                     </table>
                   </div>
                 </div>
               </div>
             </div>
-              
-
-          </div>
+           </div>
+         </div>
           <!-- Content wrapper -->
         </div>
         <!-- / Layout page -->
@@ -318,176 +346,9 @@
     <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="../../assets/js/tui-tree.js"></script>
-    <script src="../../assets/calendar/scripts/utils.js"></script>
-    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.ie11.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="../../assets/js/dashboards-analytics.js"></script>
+
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script>
-      const Calendar = tui.Calendar;
-
-      const container = document.getElementById('calendar');
-      
-      const options = {
-        defaultView: 'month',
-        month: {
-          dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-        },
-        gridSelection: {
-        enableDblClick: false,
-        enableClick: false,
-        },
-        
-        timezone: {
-          zones: [
-            {
-              timezoneName: 'Asia/Seoul',
-              displayLabel: 'Seoul',
-            },
-          ],
-        },
-        calendars: [
-          {
-            id: 'cal1',
-            name: '개인',
-            backgroundColor: '#03bd9e',
-          },
-          {
-            id: 'cal2',
-            name: '직장',
-            backgroundColor: '#00a9ff',
-          },
-        ],
-      };
-
-        const calendar = new Calendar(container, options);
-        calendar.setTheme({  //주말 배경색 변경
-          month: {
-            weekend: {
-              backgroundColor: 'aliceblue',
-            },
-          },
-        });
-
-        
-        
-    </script>
-
-    <script type="text/javascript">
-      var todayButton = $('.today');
-      var prevButton = $('.prev');
-      var nextButton = $('.next');
-      var range = document.querySelector('.range');
-
-      function displayMonth() {
-        var currentDate = new Date();
-        var year = currentDate.getFullYear();
-        var month = currentDate.toLocaleString('ko-KR', { month: 'long' });
-
-        range.textContent = year + '년 ' + month;
-      }
-
-
-      function displayRenderRange() {
-        range.textContent = getNavbarRange(calendar.getDateRangeStart(), calendar.getDateRangeEnd(), 'month');
-      }
-
-      todayButton.addEventListener('click', function () {
-        calendar.today();
-        displayMonth();
-        displayRenderRange();
-      });
-      prevButton.addEventListener('click', function () {
-        calendar.prev();
-        displayMonth();
-        displayRenderRange();
-      });
-      nextButton.addEventListener('click', function () {
-        calendar.next();
-        displayMonth();
-        displayRenderRange();
-      });
-
-      displayMonth();
-      displayRenderRange();
-
-      
-    </script>
-    <script class="code-js">
-
-      var util = {
-          addEventListener: function(element, eventName, handler) {
-              if (element.addEventListener) {
-                  element.addEventListener(eventName, handler, false);
-              } else {
-                  element.attachEvent('on' + eventName, handler);
-              }
-          }
-      };
-
-      var data = [
-          {text: '외과1팀', children: [
-              {text: 'sub-A1'},
-              {text: 'sub-A2'},
-              {text: 'sub-A3'},
-              {text: 'sub-A4'},
-              {text: 'sub-A5', state: 'closed', children: [
-                  {text:'sub-A5A', children:[
-                      {text:'sub-A5A1'}
-                  ]},
-                  {text:'sub_A5B'}
-              ]},
-              {text: 'sub-A6'},
-              {text: 'sub-A7'},
-              {text: 'sub-A8'},
-              {text: 'sub-A9', state: 'closed', children: [
-                  {text:'sub-A9A'},
-                  {text:'sub-A9B'}
-              ]},
-              {text: 'sub-A10'},
-              {text: 'sub-A11'},
-              {text: 'sub-A12'}
-          ]},
-          {text: 'rootB', state:'closed', children: [
-              {text:'sub-B1'},
-              {text:'sub-B2'},
-              {text:'sub-B3'}
-          ]}
-      ];
-
-      var tree = new tui.Tree('#tree', {
-          data: data,
-          nodeDefaultState: 'opened'
-      });
-
-      var addChildBtn = document.getElementById('addChildBtn');
-      var removeChildBtn = document.getElementById('removeChildBtn');
-      var sortBtn = document.getElementById('sortBtn');
-      var rootNodeId = tree.getRootNodeId();
-      var firstChildId = tree.getChildIds(rootNodeId)[0];
-
-      util.addEventListener(addChildBtn, 'click', function() {
-          tree.add({text:'hello world'}, firstChildId);
-      });
-
-      util.addEventListener(removeChildBtn, 'click', function() {
-          var lastGrandChildId = tree.getChildIds(firstChildId).slice(-1)[0];
-          tree.remove(lastGrandChildId);
-      });
-
-      util.addEventListener(sortBtn, 'click', function() {
-          tree.sort(function(nodeA, nodeB) {
-              var aValue = nodeA.getData('text'),
-                  bValue = nodeB.getData('text');
-
-              if (!aValue.localeCompare) {
-                  return 0;
-              }
-              return aValue.localeCompare(bValue);
-          });
-      });
-
-      </script>
   </body>
 </html>

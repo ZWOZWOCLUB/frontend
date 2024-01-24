@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>급여명세서</title>
+    <title>공지사항테스트</title>
 
     <meta name="description" content="" />
 
@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="../../assets/css/pay.css" />
+    <link rel="stylesheet" href="../../assets/css/notice.css" />
 
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
@@ -241,244 +241,109 @@
           <div class="content-wrapper">
             <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!여기에 작성!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">급여 ></span> 급여명세서</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span></h4>
 
              
                 <!-- Basic Layout -->
+               
+
                 <div class="col-xxl">
-                  <div class="card mb-4">
-                    <div class="pay-top-wrapper">
-                      <div style="width: 10%;"><b>조회연도</b></div>
-                        <select id="defaultSelect" class="form-select" style="width: 10%;">
-                          <option>--선택--</option>
-                          <option value="2024">2024</option>
-                          <option value="2023">2023</option>
-                          <option value="2022">2022</option>
-                        </select>
-                        <div style="width: 100%;"></div>
-                        <div style="width: 20%;"><b>급여명세표 출력</b></div>
-                        <img src="../../assets/img/icons/unicons/excel.png" class="pay-img"><div style="width: 5%;">엑셀</div>
-                        <img src="../../assets/img/icons/unicons/pdf.png" class="pay-img"><div style="width: 5%;">PDF</div>
-                    </div>
-                    <table class="table table-hover">
-                      <thead>
-                      <tr style="background-color: #DCDCFF;">
-                        <th>지급년월</th>
-                        <th>구분</th>
-                        <th>지급총액</th>
-                        <th>공제총액</th>
-                        <th>차감지급액</th>
-                        <th>은행명</th>
-                        <th>계좌번호</th>
-                        <th>지급일자</th>
-                      </tr>
-                    </thead>
-                      <tr>
-                        <td>2023-11</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-12-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-10</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-11-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-09</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-10-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-08</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-09-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-07</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-08-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-06</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-07-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-05</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-06-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-04</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-05-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-03</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-04-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-02</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-03-25</td>
-                      </tr>
-                      <tr>
-                        <td>2023-01</td>
-                        <td>정기급여</td>
-                        <td>4,000,000원</td>
-                        <td>559,840원</td>
-                        <td>3,440,160원</td>
-                        <td>국민은행</td>
-                        <td>000000-00-000000</td>
-                        <td>2023-02-25</td>
-                      </tr>
-                      <tr style="background-color: #EEEEFF;">
-                        <td>&nbsp;</td>
-                        <td><b>합계</b></td>
-                        <td><b>원</b></td>
-                        <td><b>원</b></td>
-                        <td><b>원</b></td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                      </tr>
-                     </table>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6 col-12 mb-md-0 mb-4">
-                    <div class="card">
-                      <h5 class="card-header"><b>지급사항</b></h5>
-                      <table class="table">                        
-                        <tr style="background-color: #DCDCFF;">
-                          <th>항목</th>
-                          <th>금액</th>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;">기본급</td>
-                          <td style="text-align: right;">3,800,000원</td>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;">식비</td>
-                          <td style="text-align: right;">200,000원</td>
-                        </tr>
-                        <tr>
-                          <td style="border-bottom: #ffffff;">&nbsp;</td>
-                          <td style="border-bottom: #ffffff;">&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td style="border-bottom: #ffffff;">&nbsp;</td>
-                          <td style="border-bottom: #ffffff;">&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td style="border-bottom: #ffffff;">&nbsp;</td>
-                          <td style="border-bottom: #ffffff;">&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                        </tr>
-                        
-                        <tr style="background-color: #EEEEFF;">
-                          <td style="text-align: left;"><b>합계</b></td>
-                          <td style="text-align: right;"><b>4,000,000원</b></td>
-                        </tr>
-                       </table>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-12">
-                    <div class="card">
-                      <h5 class="card-header"><b>공제사항</b></h5>
-                      <table class="table">                        
-                        <tr style="background-color: #DCDCFF;">
-                          <th>항목</th>
-                          <th>금액</th>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;">국민연금</td>
-                          <td style="text-align: right;">171,000원</td>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;">고용보험</td>
-                          <td style="text-align: right;">34,200원</td>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;">건강보험료</td>
-                          <td style="text-align: right;">134,710원</td>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;">노인장기요양보험료</td>
-                          <td style="text-align: right;">17,250원</td>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;">소득세</td>
-                          <td style="text-align: right;">184,260원</td>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;">지방소득세</td>
-                          <td style="text-align: right;">18,420원</td>
-                        </tr>
-                        <tr style="background-color: #EEEEFF;">
-                          <td style="text-align: left;"><b>합계</b></td>
-                          <td style="text-align: right;"><b>559,840원</b></td>
-                        </tr>
-                       </table>
+                  <div class="card mb-4" >
+                      
+                      
+                      <div class="row">
+                          <div class="col-xl" >
+                              
+                              <div class="pay-top-wrapper" style="width: 60%; margin: 0 auto; ">
+                                
+                                <div style="width: 15%; color: #8184ff;"><b>공지사항 작성</b></div>
+                                
+                                <!-- <div style="width: 100%;"></div> -->
+                                <!-- <div class="btn btn-primary" style="width: 15%;"><b>공지작성</b></div> -->
+                                
+                              </div>
+                            
+                            <div class="card-body" style="width: 60%; margin: 0 auto; ">
+                              <form>
+                                
+                                <div class="mb-3">
+                                    
+                                  <label class="form-label" for="basic-default-fullname">제목<span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" id="basic-default-fullname" placeholder="제목을 작성해 주세요." />
+                                </div>
+                                <div class="mb-3">
+                                  <label class="form-label" for="basic-default-message">내용<span style="color: red;">*</span></label>
+                                  <textarea
+                                    
+                                    id="basic-default-message"
+                                    class="form-control"
+                                    placeholder="내용을 작성해주세요."
+                                    style="height: 300px;"
+                                  ></textarea>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="formFileMultiple" class="form-label">파일 첨부</label>
+
+                                     <div class="input-group">
+                                        <input type="file" class="form-control" id="inputGroupFile02" />
+                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                      </div>
+                                      
+                                  </div>
+                                  <label for="formFileMultiple" class="form-label">알림 설정</label>
+                                  <div class="col-md">
+                                    
+                                    <div class="form-check form-check-inline mt-3">
+                                      <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="inlineRadioOptions"
+                                        id="inlineRadio1"
+                                        value="option1"
+                                      />
+                                      <label class="form-check-label" for="inlineRadio1">전송</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                      <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="inlineRadioOptions"
+                                        id="inlineRadio2"
+                                        value="option2"
+                                      />
+                                      <label class="form-check-label" for="inlineRadio2">전송하지 않음</label>
+                                    </div>
+
+                                  
+                                
+                              </form>
+                              
+                            </div>
+                            <br>
+                            <hr class="m-0">
+                          </div>
                           
-                    </div>
-                  </div>
+                        </div>
+                        <div class="pay-top-wrapper">
+                            
+                          <!-- 삭제버튼입니다 -->
+                          <div style="width: 20%;"></div>
+                          <div style="width: 37%;"></div>
+
+                          <div class="btn btn-danger" style="width: 10%; box-shadow: 0px 0px 10px #bbbdfc; background-color: #bbbdfc; border-color: #bbbdfc" ><b>닫기</b></div>
+                          <div style="width: 2%;"></div>
+                          
+                          <button type="submit" class="btn btn-primary" style="width: 10%;">작성 완료</button>
+                          <div style="width: 20%;"></div>
+    
+                      </div>
+                    <div>
+
                 </div>
+               
             </div>
+            
+       
           </div>
           <!-- Content wrapper -->
         </div>
