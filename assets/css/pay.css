@@ -233,7 +233,6 @@
 
 .input-group5 {
     position: relative;
-    display: flex;
     flex-wrap: wrap;
     padding-top: 20px;
 }
@@ -351,4 +350,29 @@
     font-size: 22px;
     font-weight: 500;
     margin-right: 10px;
+}
+
+
+input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+#addList{
+    border: 0px;
+    background-color: #fff;
+    color: #696cff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-top: 0.5rem;
+}
+
+
+.labelWrapper{
+    display: flex;
+    width: 100%;
 }

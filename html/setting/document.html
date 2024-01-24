@@ -286,49 +286,45 @@
                     </ul>
                     <div class="card mb-4">
                       <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="table">
+                          <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 5%;">
+                            <col style="width: 5%;">
+                            <col style="width: 5%;">
+                        </colgroup>
                           <thead>
                             <tr style="text-align: left;">
                               <th>증빙서류</th>
                               <th>제출일</th>
                               <th>수정일</th>
                               <th>첨부파일</th>
+                              <th>&nbsp;</th>
+                              <th>&nbsp;</th>
+                              <th>&nbsp;</th>
                             </th>
                           </thead>
                           <tbody class="table-border-bottom-0">
-                            <tr style="text-align: left;">
-                              <td>보안서약서</td>
+                            <tr style="text-align: left;" class="List">
+                              <td><input type="text"></td>
                               <td>0000-00-0000</td>
                               <td>0000-00-0000</td>
                               <td>~~~~~~~~~.pdf</td>
-                              <td><i class="bx bx-down-arrow-alt" style="padding-right: 10px;"></i>
-                                <i class="bx bx-up-arrow-alt" style="padding-right: 10px;"></i>
-                                <i class="bx bx-x"></i></td>
-                            </tr>
-                            <tr style="text-align: left;">
-                              <td>졸업증명서</td>
-                              <td>0000-00-0000</td>
-                              <td>0000-00-0000</td>
-                              <td>~~~~~~~~~.pdf</td>
-                              <td><i class="bx bx-down-arrow-alt" style="padding-right: 10px;"></i>
-                                <i class="bx bx-up-arrow-alt" style="padding-right: 10px;"></i>
-                                <i class="bx bx-x"></i></td>
-                            </tr>
-                            <tr style="text-align: left;">
-                              <td>통장사본</td>
-                              <td>0000-00-0000</td>
-                              <td>0000-00-0000</td>
-                              <td>~~~~~~~~~.pdf</td>
-                              <td><i class="bx bx-down-arrow-alt" style="padding-right: 10px;"></i>
-                                  <i class="bx bx-up-arrow-alt" style="padding-right: 10px;"></i>
-                                  <i class="bx bx-x"></i></td>
+                              <td><i class="bx bx-down-arrow-alt" style="padding-right: 10px;"></i></td>
+                                <td>
+                                <label for="file" style="padding-right: 10px; cursor: pointer; "><i class="bx bx-up-arrow-alt"></i></label>
+                                <input type="file" id="file"></td>
+                                <td>
+                                <button class="bx bx-x" name="btnX" onclick="remove(this)" style="border: 0px; background-color: rgba(0, 0, 0, 0);"></button></td>
                             </tr>
                         </tbody>
                         </table>
-                        <div class="addList">
-                          <br>
+                        <button id="addList">
                           +추가
-                          </div>
+                          </button>
                         
                       </div>
                     </div>
@@ -345,7 +341,37 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
+    <script>
+      let listClick = document.getElementById('addList');
 
+      listClick.addEventListener('click', function(event){
+        console.log('클릭')
+        let newList = $("<tr style='text-align: left;' class='List'>" +
+                              "<td><input type='text'></td>" +
+                              "<td>0000-00-0000</td>" +
+                              "<td>0000-00-0000</td>" +
+                              "<td>~~~~~~~~~.pdf</td>" +
+                              "<td><i class='bx bx-down-arrow-alt' style='padding-right: 10px;'></i></td>" +
+                                "<td><label for='file' style='padding-right: 10px; cursor: pointer; '><i class='bx bx-up-arrow-alt'></i></label>" +
+                                "<input type='file' id='file'></td>" +
+                                "<td><button class='bx bx-x' name='btnX' onclick='remove(this)' style='border: 0px; background-color: rgba(0, 0, 0, 0);'></i></button></td>" +
+                            "</tr>");
+
+      if ($(".List").length === 0) {
+      // .List가 없으면 테이블에 첫 번째 행으로 추가
+      $("tbody").append(newList);
+        } else {
+          $(".List:last").after(newList);
+        }
+      });
+    
+      function remove(ths){
+        var ths = $(ths);
+    
+      ths.parents("tr").remove();
+        }
+      
+    </script>
     
 
     <!-- Core JS -->
