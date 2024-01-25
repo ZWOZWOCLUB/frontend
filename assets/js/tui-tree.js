@@ -4813,7 +4813,7 @@ module.exports = {
       '{{stateLabel}}' +
       '</button>' +
       '<span class="tui-tree-text {{textClass}}">' +
-      '<span class="tui-tree-ico tui-ico-folder"></span>' +
+      '<span class="bx bx-folder"></span>' +
       '{{text}}' +
       '</span>' +
       '</div>' +
@@ -4821,7 +4821,7 @@ module.exports = {
     leafNode:
       '<div class="tui-tree-content-wrapper">' +
       '<span class="tui-tree-text {{textClass}}">' +
-      '<span class="tui-tree-ico tui-ico-file"></span>' +
+      '<span class="bx bx-user"></span>' +
       '{{text}}' +
       '</span>' +
       '</div>'
