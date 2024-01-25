@@ -299,16 +299,17 @@
                               <div class="form-label"style="width: 24%;">발행기관</div>
                               <div class="form-label"style="width: 5%;"></div>
                             </div>
-                            </div>
+                          </div>
                               <div class="input-group3" id="group1">
                                 <div class="inputWrapper">
-                                  <input class="form-control3" type="date" style="border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;"/>
+                                  <input class="form-control3" type="date" style="border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;" id="inputGroup1"/>
                                 </div>
                                 <div class="inputWrapper">
                                   <input
                                   type="text"
                                   class="form-control3"
                                   aria-describedby="basic-addon11"
+                                  id="inputGroup2"
                                 />
                               </div>
                               <div class="inputWrapper">
@@ -316,6 +317,7 @@
                                   type="text"
                                   class="form-control3"
                                   aria-describedby="basic-addon11"
+                                  id="inputGroup3"
                                 />
                               </div>
                               <div class="inputWrapper">
@@ -323,6 +325,7 @@
                                   type="text"
                                   class="form-control3"
                                   aria-describedby="basic-addon11"
+                                  id="inputGroup4"
                                 />
                               </div>
                               <div>
@@ -330,7 +333,7 @@
                                     <button class="bx bx-x" name="btnX" onclick="remove1(this)" style="border: 0px; background-color: rgba(0, 0, 0, 0); border-top-right-radius: 0.375rem; border-bottom-right-radius: 0.375rem;"></button></td>
                                   </div>
                               </div>
-                          </div>
+                              </div>
                           </div>
                           <div class="addList" id = "addList1">
                             +추가
@@ -355,16 +358,17 @@
                           </div>
                             <div class="input-group3" id="group2">
                               <div class="inputWrapper">
-                                <input class="form-control3" type="date" style="border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;"/>
+                                  <input class="form-control3" type="date" style="border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;" id="inputGroup5"/>
                               </div>
                               <div class="inputWrapper">
-                                <input class="form-control3" type="date" />
+                                <input class="form-control3" type="date" id="inputGroup6"/>
                               </div>
                               <div class="inputWrapper">
                                 <input
                                   type="text"
                                   class="form-control3"
                                   aria-describedby="basic-addon11"
+                                  id="inputGroup7"
                                 />
                               </div>
                               <div class="inputWrapper">
@@ -372,6 +376,7 @@
                                   type="text"
                                   class="form-control3"
                                   aria-describedby="basic-addon11"
+                                  id="inputGroup8"
                                 />
                               </div>
                               <div class="inputWrapper">
@@ -379,6 +384,7 @@
                                   type="text"
                                   class="form-control3"
                                   aria-describedby="basic-addon11"
+                                  id="inputGroup9"
                                 />
                               </div>
                               <div>
@@ -411,16 +417,17 @@
                             </div>
                             <div class="input-group3" id="group3">
                               <div class="inputWrapper">
-                                <input class="form-control3" type="date" style="border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;"/>
+                                <input class="form-control3" type="date" style="border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;" id="inputGroup10"/>
                               </div>
                               <div class="inputWrapper">
-                                <input class="form-control3" type="date" />
+                                <input class="form-control3" type="date" id="inputGroup11"/>
                               </div>
                               <div class="inputWrapper">
                                 <input
                                   type="text"
                                   class="form-control3"
                                   aria-describedby="basic-addon11"
+                                  id="inputGroup12"
                                 />
                               </div>
                               <div class="inputWrapper">
@@ -428,16 +435,17 @@
                                   type="text"
                                   class="form-control3"
                                   aria-describedby="basic-addon11"
+                                  id="inputGroup13"
                                 />
                               </div>
                               <div class="inputWrapper">
-                                <select id="" class="form-select1">
-                                  <option value="">선택</option>
-                                  <option value="">졸업</option>
-                                  <option value="">수료</option>
-                                  <option value="">재학</option>
-                                  <option value="">휴학</option>
-                                  <option value="">중퇴</option>
+                                <select id="inputGroup14" class="form-select1">
+                                  <option value="0">선택</option>
+                                  <option value="1">졸업</option>
+                                  <option value="2">수료</option>
+                                  <option value="3">재학</option>
+                                  <option value="4">휴학</option>
+                                  <option value="5">중퇴</option>
                                   </select>
                               </div>
                               <div>
@@ -476,129 +484,170 @@
       let listClick1 = document.getElementById('addList1');
       let listClick2 = document.getElementById('addList2');
       let listClick3 = document.getElementById('addList3');
+      
+      
 
       listClick1.addEventListener('click', function(event){
         console.log('클릭1')
         let newList1 = $("<div class='input-group3' id='group1'>"+
           "<div class='inputWrapper'>"+
-            "<input class='form-control3' type='date' style='border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;'/>"+
-            " </div>"+
-            "   <div class='inputWrapper'>"+
-              "        <input type='text' class='form-control3' aria-describedby='basic-addon11'/>"+
-              "    </div>"+
-              "     <div class='inputWrapper'>"+
-                                "      <input type='text' class='form-control3' aria-describedby='basic-addon11' />"+
-                                "      </div>"+
-                                "      <div class='inputWrapper'>"+
-                                  "       <input type='text' class='form-control3' aria-describedby='basic-addon11' />"+
-                                  "      </div>"+
-                                  "         <div>"+
-                                "         <div class='form-control3' style='border-top-right-radius: 0.375rem; border-bottom-right-radius: 0.375rem;'>"+
-                                  "<button class='bx bx-x' name='btnX' onclick='remove1(this)' style='border: 0px; background-color: rgba(0, 0, 0, 0);'></button></td>"+
-                                    "          </div>"+
-                                  "        </div>");
+          "<input class='form-control3' type='date' style='border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;' id='inputGroup1'/>"+
+          " </div>"+
+          "<div class='inputWrapper'>"+
+          "<input type='text' class='form-control3' aria-describedby='basic-addon11' id='inputGroup2'/>"+
+          "</div>"+
+          "<div class='inputWrapper'>"+
+          "<input type='text' class='form-control3' aria-describedby='basic-addon11' id='inputGroup3'/>"+
+          "</div>"+
+          "<div class='inputWrapper'>"+
+          "<input type='text' class='form-control3' aria-describedby='basic-addon11' id='inputGroup4'/>"+
+          "</div>"+
+          "<div>"+
+          "<div class='form-control3' style='border-top-right-radius: 0.375rem; border-bottom-right-radius: 0.375rem;'>"+
+          "<button class='bx bx-x' name='btnX' onclick='remove1(this)' style='border: 0px; background-color: rgba(0, 0, 0, 0);'></button></td>"+
+          "</div>"+
+          "</div>");
 
       if ($("#groupList1").length === 0) {
-      // .List가 없으면 테이블에 첫 번째 행으로 추가
+      
       $("tbody").append(newList1);
         } else {
-          $("#groupList1:last").after(newList1);
+          $("#group1:last").after(newList1);
         }
       });
     
       function remove1(ths){
-        console.log("클릭");
-        var ths = $(ths);
-    
-      ths.parents("#group1").remove();
-        }
+          console.log("클릭");
+          var ths = $(ths);
+          let count1 = document.querySelectorAll("#group1").length;
+          let input1 = document.getElementById('inputGroup1');
+          let input2 = document.getElementById('inputGroup2');
+          let input3 = document.getElementById('inputGroup3');
+          let input4 = document.getElementById('inputGroup4');
+          if (count1 === 1) {
+              console.log("1클릭")
+              input1.value = null;
+              input2.value = null;
+              input3.value = null;
+              input4.value = null;
+          } else {
+              ths.parents("#group1").remove();
+          }
+      }
 
         listClick2.addEventListener('click', function(event){
         console.log('클릭2')
         let newList2 = $("<div class='input-group3' id='group2'>"+
-                              "<div class='inputWrapper'>"+
-                                "<input class='form-control3' type='date' style='border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;'/>"+
-                              "</div>"+
-                              "<div class='inputWrapper'>"+
-                                "<input class='form-control3' type='date' />"+
-                              "</div>"+
-                              "<div class='inputWrapper'>"+
-                                "<input type='text' class='form-control3' aria-describedby='basic-addon11' />"+
-                              "</div>"+
-                              "<div class='inputWrapper'>"+
-                                "<input type='text' class='form-control3' aria-describedby='basic-addon11' />"+
-                              "</div>"+
-                              "<div class='inputWrapper'>"+
-                                "<input type='text' class='form-control3' aria-describedby='basic-addon11' />"+
-                             "</div>"+
-                              "<div>"+
-                                  "<div class='form-control3' style='border-top-right-radius: 0.375rem; border-bottom-right-radius: 0.375rem;'>"+
-                                    "<button class='bx bx-x' name='btnX' onclick='remove2(this)' style='border: 0px; background-color: rgba(0, 0, 0, 0);'></button></td>"+
-                                  "</div>"+
-                              "</div>"+
-                            "</div>");
+                        "<div class='inputWrapper'>"+
+                        "<input class='form-control3' type='date' style='border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;' id='inputGroup5'/>"+
+                        "</div>"+
+                        "<div class='inputWrapper'>"+
+                        "<input class='form-control3' type='date' id='inputGroup6'/>"+
+                        "</div>"+
+                        "<div class='inputWrapper'>"+
+                        "<input type='text' class='form-control3' aria-describedby='basic-addon11' id='inputGroup7' />"+
+                        "</div>"+
+                        "<div class='inputWrapper'>"+
+                        "<input type='text' class='form-control3' aria-describedby='basic-addon11' id='inputGroup8'/>"+
+                        "</div>"+
+                        "<div class='inputWrapper'>"+
+                        "<input type='text' class='form-control3' aria-describedby='basic-addon11' id='inputGroup9'/>"+
+                        "</div>"+
+                        "<div>"+
+                        "<div class='form-control3' style='border-top-right-radius: 0.375rem; border-bottom-right-radius: 0.375rem;'>"+
+                        "<button class='bx bx-x' name='btnX' onclick='remove2(this)' style='border: 0px; background-color: rgba(0, 0, 0, 0);'></button></td>"+
+                        "</div>"+
+                        "</div>"+
+                        "</div>");
 
       if ($("#groupList2").length === 0) {
-      // .List가 없으면 테이블에 첫 번째 행으로 추가
       $("tbody").append(newList2);
         } else {
-          $("#groupList2:last").after(newList2);
+          $("#group2:last").after(newList2);
         }
       });
     
       function remove2(ths){
-        console.log("클릭");
-        var ths = $(ths);
-    
-      ths.parents("#group2").remove();
-        }
+          console.log("클릭");
+          var ths = $(ths);
+          let count2 = document.querySelectorAll("#group2").length;
+          let input5 = document.getElementById('inputGroup5');
+          let input6 = document.getElementById('inputGroup6');
+          let input7 = document.getElementById('inputGroup7');
+          let input8 = document.getElementById('inputGroup8');
+          let input9 = document.getElementById('inputGroup9');
+      
+          if (count2 === 1) {
+              console.log("2클릭")
+              input5.value = null;
+              input6.value = null;
+              input7.value = null;
+              input8.value = null;
+              input9.value = null;
+          } else {
+              ths.parents("#group2").remove();
+          }
+      }
 
         listClick3.addEventListener('click', function(event){
         console.log('클릭3')
         let newList3 = $("<div class='input-group3' id='group3'>"+
-                              "<div class='inputWrapper'>"+
-                                "<input class='form-control3' type='date' style='border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;'/>"+
-                                "</div>"+
-                                "<div class='inputWrapper'>"+
-                                  "<input class='form-control3' type='date' />"+
-                                  "</div>"+
-                                  "<div class='inputWrapper'>"+
-                                    " <input type='text' class='form-control3' aria-describedby='basic-addon11' />"+
-                                    "</div>"+
-                                    "<div class='inputWrapper'>"+
-                                      "<input type='text' class='form-control3' aria-describedby='basic-addon11'/>"+
-                                      "</div>"+
-                                      "<div class='inputWrapper'>"+
-                                        "<select id='' class='form-select1'>"+
-                                          "<option value=''>선택</option>"+
-                                          " <option value=''>졸업</option>"+
-                                          " <option value=''>수료</option>"+
-                                          " <option value=''>재학</option>"+
-                                          " <option value=''>휴학</option>"+
-                                          "   <option value=''>중퇴</option>"+
-                                          "   </select>"+
-                                          "  </div>"+
-                                          "  <div>"+
-                                            "  <div class='form-control3' style='border-top-right-radius: 0.375rem; border-bottom-right-radius: 0.375rem;'>"+
-                                              "    <button class='bx bx-x' name='btnX' onclick='remove3(this)'' style='border: 0px; background-color: rgba(0, 0, 0, 0);'></button></td>"+
-                                              "   </div>"+
-                                              "  </div>"+
-                                              "   </div>");
+                          "<div class='inputWrapper'>"+
+                          "<input class='form-control3' type='date' style='border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem;' id='inputGroup10'/>"+
+                          "</div>"+
+                          "<div class='inputWrapper'>"+
+                          "<input class='form-control3' type='date' id='inputGroup11'/>"+
+                          "</div>"+
+                          "<div class='inputWrapper'>"+
+                          "<input type='text' class='form-control3' aria-describedby='basic-addon11' id='inputGroup12'/>"+
+                          "</div>"+
+                          "<div class='inputWrapper'>"+
+                          "<input type='text' class='form-control3' aria-describedby='basic-addon11' id='inputGroup13'/>"+
+                          "</div>"+
+                          "<div class='inputWrapper'>"+
+                          "<select id='inputGroup14' class='form-select1'>"+
+                          "<option value='0'>선택</option>"+
+                          "<option value='1'>졸업</option>"+
+                          "<option value='2'>수료</option>"+
+                          "<option value='3'>재학</option>"+
+                          "<option value='4'>휴학</option>"+
+                          "<option value='5'>중퇴</option>"+
+                          "</select>"+
+                          "</div>"+
+                          "<div>"+
+                          "<div class='form-control3' style='border-top-right-radius: 0.375rem; border-bottom-right-radius: 0.375rem;'>"+
+                          "<button class='bx bx-x' name='btnX' onclick='remove3(this)'' style='border: 0px; background-color: rgba(0, 0, 0, 0);'></button></td>"+
+                          "</div>"+
+                          "</div>"+
+                          "</div>");
 
       if ($("#groupList3").length === 0) {
-      // .List가 없으면 테이블에 첫 번째 행으로 추가
       $("tbody").append(newList3);
         } else {
-          $("#groupList3:last").after(newList3);
+          $("#group3:last").after(newList3);
         }
       });
     
       function remove3(ths){
-        console.log("클릭");
-        var ths = $(ths);
-    
-      ths.parents("#group3").remove();
-        }
+          console.log("클릭");
+          var ths = $(ths);
+          let count3 = document.querySelectorAll("#group3").length;
+          let input10 = document.getElementById('inputGroup10');
+          let input11 = document.getElementById('inputGroup11');
+          let input12 = document.getElementById('inputGroup12');
+          let input13 = document.getElementById('inputGroup13');
+          let input14 = document.getElementById('inputGroup14');
+          if (count3 === 1) {
+              console.log("3클릭");
+              input10.value = null;
+              input11.value = null;
+              input12.value = null;
+              input13.value = null;
+              input14.value = 0;
+          } else {
+              ths.parents("#group3").remove();
+          }
+      }
       
     </script>
 
