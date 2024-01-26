@@ -26,7 +26,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>받은 결재</title>
+    <title>출퇴근 기록 정정</title>
 
     <meta name="description" content="" />
 
@@ -277,18 +277,17 @@
                            </div>
                           <div id="margintop">
                           <div>
-                            연차구분<span style="color: red;"> *</span>
+                            신청구분<span style="color: red;"> *</span>
                             <select name="annual-type" id="annual-type" style="margin-left: 10px; width: 77%;">
-                              <option value="0">--선택</option>
-                              <option value="1">무급</option>
-                              <option value="2">유급</option>
+                              <option value="0">--선택--</option>
+                              <option value="1">퇴근시간</option>
+                              <option value="2">출근시간</option>
+                              <option value="3">결근</option>
                             </select>
                           </div>
                           <div>
                             신청일<span style="color: red;"> *</span>
-                            <input type="date" id="annual-date" style="margin-left: 10px; margin-right: 10px; width: 36%;">
-                            <span> ~ </span>
-                            <input type="date" id="annual-date" style="margin-left: 10px; width: 36%;">
+                            <input type="date" id="annual-date" style="margin-left: 10px; margin-right: 10px; width: 80%;">
                           </div>
                           <div style="display: flex; align-items: center;">
                             <label  for="basic-default-message">내용<span style="color: red;">*</span></label>
@@ -303,6 +302,7 @@
 
                                <div class="input-group" style="margin-left: 20px; width: 80%;padding-bottom: 45px;">
                                   <input type="file" class="form-control" id="inputGroupFile02" style="width: 70%; height: 30px; padding-bottom: 30px;"/>
+                                  <label class="input-group-text" for="inputGroupFile02" style="height: 31.5px;">Upload</label>
                                 </div>
                                 
                             </div>
