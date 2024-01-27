@@ -26,7 +26,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>스케줄 정정</title>
+    <title>퇴직신청</title>
 
     <meta name="description" content="" />
 
@@ -41,9 +41,9 @@
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="../../assets/css/pay.css" />
-    <link rel="stylesheet" href="../../assets/css/payment.css" />
-    <link rel="stylesheet" href="../../assets/css/payment-annual.css" />
     <link rel="stylesheet" href="../../assets/css/custom-core.css" />
+    <link rel="stylesheet" href="../../assets/css/retire.css" />
+
 
 
     <!-- Helpers -->
@@ -272,23 +272,29 @@
                           <div id="payment-manager2"></div>
                         </div>
                         <div class="kind">
-                          <div>
-                            제목<span style="color: red;"> *</span> <input type="text" id="input-name" />
+                          <div id="re-div">
+                            <div id="top-section">
+                            <span style="height: 50px;">퇴직 준비 확인</span>
+                            <input type="checkbox" style="margin-bottom: 50px;"></input>
+                            </div>
+                            <div id="bottom-section">
+                                <span>퇴직 절차에 관한 안내와 서류 결재처리가 완료되었나요?</span>
+                                <br />
+                                <span>입사시 받은 물품 반납 및 휴가, 미결재 문서 처리 등</span>
+                            </div>
                            </div>
                           <div id="margintop">
                           
                           <div>
-                            신청일<span style="color: red;"> *</span>
-                            <input type="date" id="annual-date" style="margin-left: 10px; margin-right: 10px; width: 36%;">
-                            <span> ~ </span>
-                            <input type="date" id="annual-date" style="margin-left: 10px; width: 36%;">
+                            퇴직일<span style="color: red;"> *</span>
+                            <input type="date" id="annual-date" style="margin-left: 10px; margin-right: 10px; width: 80%;">
                           </div>
                           <div style="display: flex; align-items: center;">
                             <label  for="basic-default-message">내용<span style="color: red;">*</span></label>
                                   <textarea
                                     id="annual-content"
-                                    placeholder="내용을 작성해주세요."
-                                    style="height: 280px; width: 80%; margin-left: 20px;"
+                                    placeholder="퇴직 사유을 작성해주세요."
+                                    style="height: 100px; width: 82%; margin-left: 20px;"
                                   ></textarea>
                           </div>
                           <div style="display: flex; align-items: center;">

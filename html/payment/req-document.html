@@ -26,7 +26,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>스케줄 정정</title>
+    <title>서류요청</title>
 
     <meta name="description" content="" />
 
@@ -41,9 +41,9 @@
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="../../assets/css/pay.css" />
-    <link rel="stylesheet" href="../../assets/css/payment.css" />
-    <link rel="stylesheet" href="../../assets/css/payment-annual.css" />
     <link rel="stylesheet" href="../../assets/css/custom-core.css" />
+    <link rel="stylesheet" href="../../assets/css/req-document.css" />
+
 
 
     <!-- Helpers -->
@@ -272,40 +272,26 @@
                           <div id="payment-manager2"></div>
                         </div>
                         <div class="kind">
-                          <div>
-                            제목<span style="color: red;"> *</span> <input type="text" id="input-name" />
-                           </div>
-                          <div id="margintop">
-                          
-                          <div>
-                            신청일<span style="color: red;"> *</span>
-                            <input type="date" id="annual-date" style="margin-left: 10px; margin-right: 10px; width: 36%;">
-                            <span> ~ </span>
-                            <input type="date" id="annual-date" style="margin-left: 10px; width: 36%;">
+                          <div id="req-document-div">
+                            <span style=" padding-left: 50px;">종류</span><span style="color: red; margin-right: 40px;">*</span>
+                            <select name="document" id="req-document">
+                                <option value="0">--선택--</option>
+                                <option value="1">DB에서 map으로 돌릴거야~~</option>
+                            </select>
                           </div>
-                          <div style="display: flex; align-items: center;">
+                          <div style="display: flex; align-items: center; padding-left: 50px;">
                             <label  for="basic-default-message">내용<span style="color: red;">*</span></label>
                                   <textarea
-                                    id="annual-content"
-                                    placeholder="내용을 작성해주세요."
-                                    style="height: 280px; width: 80%; margin-left: 20px;"
+                                    id="document-contents"
+                                    placeholder="증명서 용도 및 기간(년) 등 구체적인 내용을 입력해주세요."
                                   ></textarea>
-                          </div>
-                          <div style="display: flex; align-items: center;">
-                            <label for="formFileMultiple" class="form-label">파일첨부</label>
-
-                               <div class="input-group" style="margin-left: 20px; width: 80%;padding-bottom: 45px;">
-                                  <input type="file" class="form-control" id="inputGroupFile02" style="width: 70%; height: 30px; padding-bottom: 30px;"/>
-                                </div>
-                                
-                            </div>
-                            
                           </div>
                           <hr />
                           <div id="last-thing">
                             <div class="btn btn-danger" id="clean-btn" style="width: 20%; box-shadow: 0px 0px 10px #bbbdfc; background-color: #bbbdfc; border-color: #bbbdfc" ><b>초기화</b></div>
                             <button type="button" class="btn btn-primary" id="complete-payment">작성 완료</button>
                           </div>
+                        </div>
                           </div>
                         </div>
                       </div>
